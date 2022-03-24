@@ -5,21 +5,34 @@
 
 .header {
   background-color: $global-color;
+  padding-right: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.75;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  gap: 26%;
 
   &__logo {
-    width: 100%;
-    height: 100px;
+    width: 150px;
+    height: 50px;
+    // position: fixed;
+    // top: 0;
   }
 
   &__link {
     text-decoration: none;
+    color: $global-text;
+
     width: 100%;
+  }
+
+  &__right {
+    display: flex;
+    gap: 1rem;
   }
 }

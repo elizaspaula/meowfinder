@@ -1,0 +1,17 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/typography" as *;
+
+.cattery-list {
+  padding: 1rem;
+  background-color: $background-color;
+
+  &__card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    margin-top: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
