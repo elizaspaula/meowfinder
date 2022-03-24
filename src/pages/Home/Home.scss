@@ -1,0 +1,77 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.home {
+  padding: 1rem;
+  background-color: $background-color;
+}
+
+.hero {
+  &__title {
+    padding-bottom: 1rem;
+  }
+  &__img {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+.info {
+  background-color: $global-color;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  margin-top: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &__title {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__img {
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+
+  &__text {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4.5rem;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  background-color: $global-color;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &__button {
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  &__btn {
+    border: none;
+    border-radius: 1.875rem;
+    width: 250px;
+    height: 2.5rem;
+    font-size: 0.8125rem;
+    background-color: #feb700;
+    box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
+    color: $global-text;
+    font-weight: 600;
+  }
+}

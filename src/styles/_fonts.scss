@@ -1,0 +1,36 @@
+$font: "Avenir Next", Arial, sans-serif;
+$normal: 400;
+$bold: 700;
+$demi: 600;
+
+@font-face {
+  font-family: $font;
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype");
+  font-weight: $bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font;
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype");
+  font-weight: $normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font;
+  src: url("../assets/fonts/AvenirNextLTPro-Regular_1.ttf") format("truetype");
+  font-weight: $normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font;
+  src: url("../assets/fonts/AvenirNextLTPro-Bold_1.ttf") format("truetype");
+  font-weight: $bold;
+  font-style: normal;
+  font-display: swap;
+}
