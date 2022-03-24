@@ -22,7 +22,7 @@ function Home() {
       </div>
       <dib></dib>
       <form className="search">
-        <label htmlFor="breed" className="search__label">
+        <label htmlFor="breed" className="search__label label">
           Select the breed
         </label>
         <select name="breed" id="breed" className="search__select">
@@ -32,7 +32,7 @@ function Home() {
           <option value="Ragdoll">Ragdoll</option>
           <option value="Brazilian Cat">Brazilian Cat</option>
         </select>
-        <label htmlFor="breed" className="search__label">
+        <label htmlFor="breed" className="search__label label">
           Select the province
         </label>
         <select name="province" id="province" className="search__select">

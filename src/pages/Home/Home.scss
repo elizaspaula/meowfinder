@@ -59,7 +59,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &__button {
-    padding-top: 1rem;
+    padding-top: 0.625rem;
     text-align: center;
   }
 
@@ -69,9 +69,28 @@
     width: 250px;
     height: 2.5rem;
     font-size: 0.8125rem;
-    background-color: #feb700;
+    background-color: $interactive-color;
     box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
     color: $global-text;
     font-weight: 600;
+  }
+  &__select {
+    height: 2.25rem;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid $outline-divider-color;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    background: transparent;
+    appearance: none;
+    &:focus {
+      outline: none;
+      border: 1px solid $interactive-color;
+    }
+  }
+
+  &__label {
+    padding-bottom: 0.5rem;
   }
 }
