@@ -4,6 +4,7 @@ import Catteries from "./pages/Catteries/Catteries";
 import Home from "./pages/Home/Home";
 import CatteryDetails from "./components/CatteryDetails/CatteryDetails";
 import HeaderHav from "./components/HeaderNav/HeaderNav";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
             {/* <Redirect path="/" to="/home" exact /> */}
             <Route path="/home" exact component={Home} />
             <Route path="/catteries" exact component={Catteries} />
-            <Route path="/catteries:id" exact component={CatteryDetails} />
+            <Route path="/catteries/:id" exact component={CatteryDetails} />
           </Switch>
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );

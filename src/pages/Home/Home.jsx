@@ -20,7 +20,6 @@ function Home() {
       <div className="hero__img">
         <img className="hero__image" src={hero} alt="hero" />
       </div>
-      <dib></dib>
       <form className="search">
         <label htmlFor="breed" className="search__label label">
           Select the breed

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import CatteryList from "../../components/CatteryList/CatteryList";
 
-function Catteries(props) {
+function Catteries() {
   const [catteryList, setCatteryList] = useState([]);
 
   useEffect(() => {
@@ -14,8 +14,10 @@ function Catteries(props) {
 
   return (
     <>
-      <h1>List of Registered Catteries</h1>
-      <CatteryList catteryList={catteryList} />
+      <div className="catteries">
+        <h1 className="catteries__title">List of Registered Catteries</h1>
+        <CatteryList catteryList={catteryList} />
+      </div>
     </>
   );
 }

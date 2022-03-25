@@ -4,9 +4,7 @@
 @use "../../styles/typography" as *;
 
 .cattery-list {
-  padding: 1rem;
-  background-color: $background-color;
-
+  padding: 0 1rem;
   &__card {
     background-color: white;
     padding: 1rem;

@@ -13,20 +13,20 @@ function HeaderHav() {
             </Link>
           </div>
           <div className="nav__right">
-            <Link
+            <NavLink
               to="/home"
               className="nav__link link"
               activeClassName="nav__link--highlight"
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/catteries"
               className="nav__link link"
               activeClassName="nav__link--highlight"
             >
               Listings
-            </Link>
+            </NavLink>
           </div>
         </nav>
       </div>

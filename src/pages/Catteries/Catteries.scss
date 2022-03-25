@@ -1,4 +1,13 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
 
+.catteries {
+  padding: 1rem;
+  background-color: $background-color;
 
-
-
+  &__title {
+    padding-top: 4.125rem;
+  }
+}
