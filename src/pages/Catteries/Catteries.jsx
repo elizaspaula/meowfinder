@@ -3,13 +3,24 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import CatteryList from "../../components/CatteryList/CatteryList";
 
-function Catteries() {
+function Catteries(props) {
   const [catteryList, setCatteryList] = useState([]);
+  const { breed, province } = props.match.params;
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/catteries`).then((response) => {
-      setCatteryList(response.data);
-    });
+    if (breed && province) {
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/catteries/${breed}/${province}`)
+        .then((response) => {
+          setCatteryList(response.data);
+        });
+    } else {
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/catteries`)
+        .then((response) => {
+          setCatteryList(response.data);
+        });
+    }
   }, []);
 
   return (
