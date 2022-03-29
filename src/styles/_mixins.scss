@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./fonts" as *;
+@use "./colors" as *;
 
 //Break-points
 @mixin tablet {
@@ -11,5 +12,45 @@
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
+  }
+}
+
+@mixin flexed($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin input-field {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid $outline-divider-color;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  background: transparent;
+  appearance: none;
+  &:focus {
+    outline: none;
+    border: 1px solid $interactive-color;
+  }
+}
+
+@mixin save-btn {
+  border: none;
+  border-radius: 1.875rem;
+  width: 250px;
+  height: 2.5rem;
+  background-color: $interactive-color;
+  box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
+  color: $global-text;
+  font-weight: 600;
+  transition: 0.5s ease-in-out;
+  @include flexed(row, center, center);
+
+  &:hover {
+    background-color: #e2af2d;
   }
 }

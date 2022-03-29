@@ -3,19 +3,36 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/colors" as *;
 
-.header-box {
+.page-wrapper {
+  padding: 1rem;
+  background-color: $background-color;
+}
+
+.header-wrapper {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
   &__subheader {
     display: flex;
+    align-items: center;
+    font-size: 0.75re;
+    background-color: white;
+    padding: 1.5rem;
+    border-bottom: 1px solid $outline-divider-color;
   }
 
   &__icon {
     width: 1rem;
     height: 1rem;
   }
+
+  &__text {
+    padding-left: 0.5rem;
+  }
 }
 
 .cattery-form {
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: white;
 }
 
 .details {
@@ -23,4 +40,42 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__label {
+    padding-bottom: 0.25rem;
+  }
+  &__input {
+    @include input-field;
+  }
+
+  &__select {
+    @include input-field;
+  }
+
+  &__textarea {
+    @include input-field;
+    padding: 8px;
+    height: 7.5rem;
+    text-align: left;
+  }
+
+  &__subheader {
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    margin: 0;
+  }
+}
+
+.buttons {
+  @include flexed(row, space-between, center);
+  padding: 1rem 1.5rem;
+  background-color: white;
+}
+
+.save-btn {
+  @include save-btn;
+}
+
+.upload {
+  width: 100%;
 }

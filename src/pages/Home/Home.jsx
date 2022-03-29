@@ -1,12 +1,13 @@
 import "./Home.scss";
 import hero from "../../assets/images/heronew.svg";
+import searchBtn from "../../assets/icons/magnifying.svg";
 import listIcon from "../../assets/icons/list_icon.svg";
 import searchIcon from "../../assets/icons/search_icon.svg";
 import connectIcon from "../../assets/icons/connect_icon.svg";
 import HeaderHav from "../../components/HeaderNav/HeaderNav";
 import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Home() {
   const [province, setProvince] = useState(null);
@@ -59,8 +60,8 @@ function Home() {
             onChange={(e) => setProvince(e.target.value)}
           >
             <option value="Select">Select</option>
-            <option value="bc">British Columbia</option>
-            <option value="ab">Alberta</option>
+            <option value="British Columbia">British Columbia</option>
+            <option value="Alberta">Alberta</option>
             <option value="Manitoba">Manitoba</option>
             <option value="qb">Quebec</option>
           </select>
@@ -71,7 +72,8 @@ function Home() {
                 history.push(`/search/${province}/${breed}`);
               }}
             >
-              Search
+              <p className="search__content-btn">Search</p>
+              <img className="search__icon" src={searchBtn} alt="search icon" />
             </button>
           </div>
         </div>
@@ -86,6 +88,9 @@ function Home() {
             <p className="info__text">
               Create your cattery profile for your pet
             </p>
+            <Link to="/admin/register" className="info__link link">
+              Don't have an account? Click here to register
+            </Link>
           </div>
           <div className="info__img">
             <img className="info__icon" src={searchIcon} alt="search icon" />

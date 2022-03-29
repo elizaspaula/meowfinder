@@ -62,6 +62,8 @@
   &__button {
     padding-top: 0.625rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   &__btn {
@@ -69,34 +71,37 @@
     border-radius: 1.875rem;
     width: 250px;
     height: 2.5rem;
-    font-size: 0.8125rem;
     background-color: $interactive-color;
     box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
     color: $global-text;
     font-weight: 600;
     transition: 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       background-color: #e2af2d;
     }
   }
+
+  &__content-btn {
+    font-size: 0.8125rem;
+    font-weight: $demi;
+    flex: 1;
+  }
+
   &__select {
-    height: 2.25rem;
-    width: 100%;
-    border-radius: 20px;
-    border: 1px solid $outline-divider-color;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-    padding-right: 1rem;
-    background: transparent;
-    appearance: none;
-    &:focus {
-      outline: none;
-      border: 1px solid $interactive-color;
-    }
+    @include input-field;
   }
 
   &__label {
     padding-bottom: 0.5rem;
+  }
+
+  &__icon {
+    width: 15px;
+    height: 15px;
+    padding-right: 2px;
   }
 }

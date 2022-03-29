@@ -8,6 +8,10 @@ License: none (public domain)
   font-family: "Avenir Next", Arial, sans-serif;
 }
 
+body {
+  color: #13182c;
+}
+
 html,
 body,
 div,
