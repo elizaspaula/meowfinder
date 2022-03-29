@@ -4,12 +4,12 @@
 @use "../../styles/typography" as *;
 
 .header {
-  background-color: $global-color;
+  background-color: white;
   padding-right: 1rem;
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .nav {

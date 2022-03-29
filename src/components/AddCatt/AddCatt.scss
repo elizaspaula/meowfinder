@@ -5,7 +5,15 @@
 
 .page-wrapper {
   padding: 1rem;
-  background-color: $background-color;
+  background-image: linear-gradient(
+    209.59091784192668deg,
+    rgba(252, 184, 162, 1) -1.7714723926380316%,
+    rgba(255, 236, 210, 1) 76.05540644171779%
+  );
+
+  @include tablet {
+    padding: 1.5rem;
+  }
 }
 
 .header-wrapper {
@@ -15,7 +23,7 @@
     display: flex;
     align-items: center;
     font-size: 0.75re;
-    background-color: white;
+    background-color: $global-color;
     padding: 1.5rem;
     border-bottom: 1px solid $outline-divider-color;
   }
@@ -32,7 +40,7 @@
 
 .cattery-form {
   padding: 1.5rem;
-  background-color: white;
+  background-color: $global-color;
 }
 
 .details {
@@ -64,18 +72,49 @@
     padding-top: 1rem;
     margin: 0;
   }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      gap: 6rem;
+    }
+  }
 }
 
 .buttons {
   @include flexed(row, space-between, center);
+  gap: 1.5rem;
   padding: 1rem 1.5rem;
-  background-color: white;
+  background-color: $global-color;
+}
+
+.cancel-btn {
+  text-decoration: none;
+  width: 50%;
+  text-align: center;
+  border: 1px solid $outline-divider-color;
+  border-radius: 20px;
+  padding: 0.5rem;
+  &:hover {
+    color: $interactive-color;
+    border: 1px solid $interactive-color;
+  }
+  @include tablet {
+    margin-right: 1rem;
+  }
+  @include desktop {
+    width: 8%;
+    margin-right: 1rem;
+  }
 }
 
 .save-btn {
   @include save-btn;
+  width: 50%;
 }
 
 .upload {
   width: 100%;
+  background-color: #554b48;
+  color: white;
 }

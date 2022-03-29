@@ -36,14 +36,20 @@
     outline: none;
     border: 1px solid $interactive-color;
   }
+
+  @include tablet {
+    height: 2.375rem;
+    width: 17.9375rem;
+  }
 }
 
 @mixin save-btn {
   border: none;
+  color: $global-color;
   border-radius: 1.875rem;
   width: 250px;
   height: 2.5rem;
-  background-color: $interactive-color;
+  background-color: #cb5528;
   box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
   color: $global-text;
   font-weight: 600;

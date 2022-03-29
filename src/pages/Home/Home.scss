@@ -5,7 +5,11 @@
 
 .home {
   padding: 1rem;
-  background-color: $background-color;
+  background-image: linear-gradient(
+    209.59091784192668deg,
+    rgba(252, 184, 162, 1) -1.7714723926380316%,
+    rgba(255, 236, 210, 1) 76.05540644171779%
+  );
 }
 
 .hero {
@@ -20,7 +24,7 @@
 }
 
 .info {
-  background-color: $global-color;
+  background-color: white;
   padding: 1rem;
   border-radius: 1.25rem;
   margin-top: 1rem;
