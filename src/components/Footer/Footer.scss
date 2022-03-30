@@ -4,8 +4,9 @@
 @use "../../styles/colors" as *;
 
 .footer {
-  background-color: #f8edeb;
+  background-color: $global-color;
   padding: 1rem;
+  opacity: 0.85;
 
   &__icon {
     width: 1.25rem;

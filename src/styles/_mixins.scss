@@ -45,11 +45,11 @@
 
 @mixin save-btn {
   border: none;
-  color: $global-color;
+  color: white;
   border-radius: 1.875rem;
   width: 250px;
   height: 2.5rem;
-  background-color: #cb5528;
+  background-color: #ec6630;
   box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
   color: $global-text;
   font-weight: 600;
@@ -57,6 +57,6 @@
   @include flexed(row, center, center);
 
   &:hover {
-    background-color: #e2af2d;
+    background-color: #a75e41;
   }
 }

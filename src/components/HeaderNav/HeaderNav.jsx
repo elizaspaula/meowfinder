@@ -2,7 +2,7 @@ import "./HeaderNav.scss";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo.svg";
 
-function HeaderHav() {
+function HeaderHav(props) {
   return (
     <>
       <div className="header">
@@ -18,14 +18,14 @@ function HeaderHav() {
               className="nav__link link"
               activeClassName="nav__link--highlight"
             >
-              Home
+              {props.firstLink}
             </NavLink>
             <NavLink
               to="/catteries"
               className="nav__link link"
               activeClassName="nav__link--highlight"
             >
-              Listings
+              {props.secondLink}
             </NavLink>
           </div>
         </nav>

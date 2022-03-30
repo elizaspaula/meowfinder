@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <>
-      <HeaderHav />
+      <HeaderHav firstLink="Home" secondLink="Listing" />
       <div className="home">
         <div className="hero">
           <h1 className="hero__title">
@@ -83,20 +83,20 @@ function Home() {
           <div className="info__img">
             <img className="info__icon" src={listIcon} alt="list icon" />
           </div>
-          <div>
-            <h1 className="info__subtitle">List</h1>
+          <div className="info__img">
+            <h2 className="info__subtitle">List</h2>
             <p className="info__text">
               Create your cattery profile for your pet
             </p>
-            <Link to="/admin/register" className="info__link link">
-              Don't have an account? Click here to register
+            <Link to="/register" className="info__link">
+              Click here to create an account or login.
             </Link>
           </div>
           <div className="info__img">
             <img className="info__icon" src={searchIcon} alt="search icon" />
           </div>
           <div>
-            <h1 className="info__subtitle">Search</h1>
+            <h2 className="info__subtitle">Search</h2>
             <p className="info__text">
               Use our website to find exactly what you're looking for!
             </p>
@@ -105,7 +105,7 @@ function Home() {
             <img className="info__icon" src={connectIcon} alt="rocket icon" />
           </div>
           <div>
-            <h1 className="info__subtitle">Connect</h1>
+            <h2 className="info__subtitle">Connect</h2>
             <p className="info__text">Connect with the registered breeders.</p>
           </div>
         </div>

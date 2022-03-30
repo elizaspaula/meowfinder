@@ -6,9 +6,9 @@
 .home {
   padding: 1rem;
   background-image: linear-gradient(
-    209.59091784192668deg,
-    rgba(252, 184, 162, 1) -1.7714723926380316%,
-    rgba(255, 236, 210, 1) 76.05540644171779%
+    121.93581883005288deg,
+    rgba(226, 235, 239, 1) 12.645032632342279%,
+    rgba(208, 218, 224, 1) 71.74583031182016%
   );
 }
 
@@ -24,10 +24,9 @@
 }
 
 .info {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 1.25rem;
-  margin-top: 1rem;
+  background-color: $global-color;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &__title {
@@ -53,14 +52,18 @@
     width: 3.5rem;
     height: 4.5rem;
   }
+
+  &__link {
+    text-decoration: none;
+    font-size: 0.8125rem;
+    text-align: center;
+  }
 }
 
 .search {
-  display: flex;
-  flex-direction: column;
+  @include flexed(column, center, stretch);
   background-color: $global-color;
-  padding: 1rem;
-  border-radius: 1.25rem;
+  padding: 1.5rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &__button {
@@ -71,22 +74,7 @@
   }
 
   &__btn {
-    border: none;
-    border-radius: 1.875rem;
-    width: 250px;
-    height: 2.5rem;
-    background-color: $interactive-color;
-    box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
-    color: $global-text;
-    font-weight: 600;
-    transition: 0.5s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      background-color: #e2af2d;
-    }
+    @include save-btn;
   }
 
   &__content-btn {

@@ -4,7 +4,7 @@
 @use "../../styles/typography" as *;
 
 .header {
-  background-color: white;
+  background-color: $global-color;
   padding-right: 1rem;
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 26%;
+  justify-content: space-around;
 
   &__logo {
     width: 150px;

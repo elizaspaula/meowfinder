@@ -1,0 +1,55 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.register {
+  padding: 1.5rem;
+  background-image: linear-gradient(
+    121.93581883005288deg,
+    rgba(226, 235, 239, 1) 12.645032632342279%,
+    rgba(208, 218, 224, 1) 71.74583031182016%
+  );
+
+  &__title {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    font-weight: $demi;
+  }
+
+  &__content {
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    background-color: white;
+    padding: 1.5rem;
+  }
+
+  &__image {
+    width: 300px;
+  }
+
+  &__input {
+    @include input-field;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__btn {
+    @include save-btn;
+    width: 6.25rem;
+  }
+}

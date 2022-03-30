@@ -5,6 +5,8 @@ import emailIcon from "../../assets/icons/envelope-solid.svg";
 import locationIcon from "../../assets/icons/locationIcon.svg";
 import phoneIcon from "../../assets/icons/phone-solid.svg";
 import checkIcon from "../../assets/icons/circle-check-solid.svg";
+import HeaderHav from "../HeaderNav/HeaderNav";
+import Footer from "../Footer/Footer";
 
 function CatteryDetails(props) {
   console.log(props);
@@ -23,6 +25,7 @@ function CatteryDetails(props) {
 
   return (
     <>
+      <HeaderHav firstLink="Home" secondLink="Listing" />
       <div className="cattery-details">
         <div className="cattery-details__banner">
           <h1 className="cattery-details__title">
@@ -80,6 +83,7 @@ function CatteryDetails(props) {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
