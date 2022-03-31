@@ -5,11 +5,7 @@
 
 .home {
   padding: 1rem;
-  background-image: linear-gradient(
-    121.93581883005288deg,
-    rgba(226, 235, 239, 1) 12.645032632342279%,
-    rgba(208, 218, 224, 1) 71.74583031182016%
-  );
+  @include background-img;
 }
 
 .hero {
@@ -54,9 +50,16 @@
   }
 
   &__link {
-    text-decoration: none;
-    font-size: 0.8125rem;
+    @include links;
+    padding: 2rem;
+  }
+
+  &__links {
+    padding: 2rem;
+    cursor: pointer;
     text-align: center;
+    background-color: $background-color;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 }
 
@@ -71,6 +74,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    color: white;
   }
 
   &__btn {

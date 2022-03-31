@@ -6,20 +6,20 @@
 .cattery-details {
   padding: 0 1rem;
   padding-top: 4.125rem;
-  background-image: linear-gradient(
-    209.59091784192668deg,
-    rgba(252, 184, 162, 1) -1.7714723926380316%,
-    rgba(255, 236, 210, 1) 76.05540644171779%
-  );
+  @include background-img;
 
-  &__banner {
-    background-color: $global-color;
-    border-radius: 1.25rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+  &__wrapper {
+    @include cards;
+    padding: 1.5rem;
   }
 
+  &__subheader {
+    border-bottom: 1px solid $outline-divider-color;
+  }
+
+  &__contact {
+    border-top: 1px solid $outline-divider-color;
+  }
   &__title {
     padding-bottom: 1rem;
     text-transform: uppercase;
@@ -30,6 +30,7 @@
     padding-bottom: 0.5rem;
     align-items: center;
     gap: 0.625rem;
+    padding-top: 1rem;
   }
 
   &__icon {
@@ -47,10 +48,7 @@
   }
 
   &__about {
-    background-color: $global-color;
-    border-radius: 1.25rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 1rem;
+    padding-top: 1rem;
   }
 
   &__description {

@@ -1,22 +1,20 @@
 import "./App.css";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Catteries from "./pages/Catteries/Catteries";
 import Home from "./pages/Home/Home";
 import CatteryDetails from "./components/CatteryDetails/CatteryDetails";
-import Login from "./components/Login/Login";
-import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import EditCatt from "./components/EditCatt/EditCatt";
 import AddCatt from "./components/AddCatt/AddCatt";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="page">
+      <main className="page">
         <div className="page-container">
           <Switch>
-            {/* <Redirect path="/" to="/home" exact /> */}
             <Route path="/home" exact component={Home} />
             <Route path="/catteries" exact component={Catteries} />
             <Route
@@ -28,10 +26,11 @@ function App() {
             <Route path="/admin" exact component={Dashboard} />
             <Route path="/admin/edit/:id" exact component={EditCatt} />
             <Route path="/admin/add" exact component={AddCatt} />
-            <Route path="/sign" exact component={Register} />
+            <Route path="/signup" exact component={Register} />
+            <Route path="/login" exact component={Login} />
           </Switch>
         </div>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }

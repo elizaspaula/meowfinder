@@ -43,20 +43,62 @@
   }
 }
 
-@mixin save-btn {
-  border: none;
-  color: white;
-  border-radius: 1.875rem;
+@mixin cancel-btn {
+  border: 1px solid $outline-divider-color;
+  color: $outline-divider-color;
   width: 250px;
   height: 2.5rem;
-  background-color: #ec6630;
+  border-radius: 1.25rem;
+  background-color: transparent;
   box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
   color: $global-text;
-  font-weight: 600;
   transition: 0.5s ease-in-out;
   @include flexed(row, center, center);
 
   &:hover {
-    background-color: #a75e41;
+    color: $interactive-color;
+    border: 1px solid $interactive-color;
   }
+}
+
+@mixin save-btn {
+  border: none;
+  border-radius: 1.25rem;
+  width: 250px;
+  height: 2.5rem;
+  background-color: $interactive-color;
+  box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
+  color: $global-text;
+  transition: 0.5s ease-in-out;
+  @include flexed(row, center, center);
+
+  &:hover {
+    background-color: $interactive-color-hover;
+  }
+}
+
+@mixin background-img {
+  background-image: linear-gradient(
+    121.93581883005288deg,
+    rgba(226, 235, 239, 1) 12.645032632342279%,
+    rgba(208, 218, 224, 1) 71.74583031182016%
+  );
+}
+
+@mixin links {
+  text-decoration: none;
+  font-size: 0.8125rem;
+  color: $global-text-light;
+  text-align: center;
+  font-weight: $demi;
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    color: $interactive-color;
+  }
+}
+
+@mixin cards {
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  background-color: $global-color;
 }

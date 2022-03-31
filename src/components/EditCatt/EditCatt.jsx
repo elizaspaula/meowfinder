@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 function EditCatt(props) {
   const { id } = useParams();
   const { register, handleSubmit, setValue } = useForm({});
+  const authToken = sessionStorage.getItem("authToken");
 
   useEffect(() => {
     axios
@@ -30,9 +31,12 @@ function EditCatt(props) {
 
   const onSubmit = (data) => {
     axios
-      .put(`${process.env.REACT_APP_API_URL}/catteries/${id}`, data)
+      .put(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, data, {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      })
       .then((data) => {
-        console.log(data);
         props.history.push("/admin");
       })
       .catch((error) => {

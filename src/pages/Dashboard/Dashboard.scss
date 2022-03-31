@@ -1,0 +1,81 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.dashboard {
+  @include background-img;
+  top: 0;
+  position: fixed;
+  width: 100%;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: $global-color;
+    opacity: 0.85;
+    padding: 1.5rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    align-content: center;
+  }
+
+  &__add-new {
+    @include save-btn;
+    text-decoration: none;
+    color: $global-color;
+    width: 6.25rem;
+    height: 2rem;
+  }
+
+  &__logout {
+    color: $global-text-light;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      color: $interactive-color;
+    }
+  }
+}
+
+.dashboard-list {
+  padding: 1rem;
+  &__card {
+    padding: 1rem;
+    margin-top: 2rem;
+
+    @include cards;
+  }
+
+  &__title {
+    border-bottom: 1px solid $outline-divider-color;
+    padding-bottom: 1rem;
+  }
+
+  &__text-first {
+    padding-top: 0.5rem;
+  }
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+
+  &__button {
+    @include save-btn;
+    text-decoration: none;
+    color: $global-color;
+    width: 5.125rem;
+    height: 2rem;
+  }
+
+  &__delete {
+    @include cancel-btn;
+    width: 5.125rem;
+    height: 2rem;
+  }
+}

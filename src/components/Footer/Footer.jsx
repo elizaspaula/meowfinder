@@ -11,7 +11,7 @@ function Footer() {
     <>
       <footer className="footer">
         <div className="footer__content">
-          <img src={emailIcon} className="footer__icon" />
+          <img src={emailIcon} className="footer__icon" alt="phone icon" />
           <p className="footer__text">customerservice@meowfinder.com</p>
         </div>
         <div className="footer__content">

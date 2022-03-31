@@ -27,60 +27,74 @@ function CatteryDetails(props) {
     <>
       <HeaderHav firstLink="Home" secondLink="Listing" />
       <div className="cattery-details">
-        <div className="cattery-details__banner">
-          <h1 className="cattery-details__title">
-            {catteryDetails.catteryName}
-          </h1>
+        <div className="cattery-details__wrapper">
+          <div className="cattery-details__header">
+            <div className="cattery-details__subheader">
+              <h1 className="cattery-details__title">
+                {catteryDetails.catteryName}
+              </h1>
+            </div>
 
-          <div className="cattery-details__information">
-            <div className="cattery-details__content">
-              <img
-                src={checkIcon}
-                alt="certified icon"
-                className="cattery-details__icon"
-              />
-              <p className="cattery-details__label">TICA Registered</p>
-            </div>
-            <div className="cattery-details__content">
-              <img
-                className="cattery-details__icon"
-                src={locationIcon}
-                alt="location icon"
-              />
-              <p className="cattery-details__address">
-                Address: {catteryDetails.address}
-              </p>
-            </div>
-            <div className="cattery-details__content">
-              <img
-                className="cattery-details__icon"
-                src={phoneIcon}
-                alt="phone icon"
-              />
-              <p className="cattery-details__address">
-                Phone: {catteryDetails.phone}
-              </p>
-            </div>
-            <div className="cattery-details__content">
-              <img
-                className="cattery-details__icon"
-                src={emailIcon}
-                alt="email icon"
-              />
-              <p className="cattery-details__address">
-                Email: {catteryDetails.email}
-              </p>
+            <div className="cattery-details__information">
+              <div className="cattery-details__content">
+                <img
+                  src={checkIcon}
+                  alt="certified icon"
+                  className="cattery-details__icon"
+                />
+                <p className="cattery-details__label">TICA Registered</p>
+              </div>
+              <div className="cattery-details__content">
+                <img
+                  className="cattery-details__icon"
+                  src={locationIcon}
+                  alt="location icon"
+                />
+                <p className="cattery-details__address">
+                  Address: {catteryDetails.address}
+                </p>
+              </div>
+              <div className="cattery-details__content">
+                <img
+                  className="cattery-details__icon"
+                  src={phoneIcon}
+                  alt="phone icon"
+                />
+                <p className="cattery-details__address">
+                  City: {catteryDetails.city}
+                </p>
+              </div>
+              <div className="cattery-details__content">
+                <img
+                  className="cattery-details__icon"
+                  src={emailIcon}
+                  alt="email icon"
+                />
+                <p className="cattery-details__address">
+                  Province: {catteryDetails.province}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="cattery-details__about">
-          <h2 className="cattery-details__subtitle">
-            About {catteryDetails.catteryName}
-          </h2>
-          <p className="cattery-details__description">
-            {catteryDetails.description}
-          </p>
+          <div className="cattery-details__contact">
+            <h2 className="cattery-details__subtitle">Contact Information</h2>
+            <p className="cattery-details__name">Name: {catteryDetails.name}</p>
+            <p className="cattery-details__name">
+              Phone: {catteryDetails.phone}
+            </p>
+            <p className="cattery-details__name">
+              Email: {catteryDetails.email}
+            </p>
+          </div>
+          <div className="cattery-details__about">
+            <h2 className="cattery-details__subtitle">
+              About {catteryDetails.catteryName}
+            </h2>
+            <p className="cattery-details__description">
+              {catteryDetails.description}
+            </p>
+          </div>
         </div>
       </div>
       <Footer />

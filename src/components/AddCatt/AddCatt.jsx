@@ -20,6 +20,7 @@ function AddCatt() {
   const [facebook, setFacebook] = useState("");
   const [instagram, setInstagram] = useState("");
   const [data, setData] = useState(null);
+  const authToken = sessionStorage.getItem("authToken");
 
   const handleSubmit = (e) => {
     console.log(e);
@@ -41,7 +42,11 @@ function AddCatt() {
     };
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/catteries`, newCattery)
+      .post(`${process.env.REACT_APP_API_URL}/admin/cattery`, newCattery, {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      })
       .then((res) => {
         setData(res.postData);
         setCatteryname("");
@@ -88,7 +93,6 @@ function AddCatt() {
                   id="catteryname"
                   name="catteryname"
                   onChange={(e) => setCatteryname(e.target.value)}
-                  required
                 />
                 <label htmlFor="address" className="details__label label">
                   Address
@@ -101,7 +105,6 @@ function AddCatt() {
                   id="address"
                   name="address"
                   onChange={(e) => setAddress(e.target.value)}
-                  required
                 />
                 <label htmlFor="country" className="details__label label">
                   Country
@@ -112,7 +115,6 @@ function AddCatt() {
                   name="country"
                   id="country"
                   value={country}
-                  required
                 >
                   <option value="Canada">Canada</option>
                 </select>
@@ -125,7 +127,6 @@ function AddCatt() {
                   name="province"
                   id="province"
                   value={province}
-                  required
                 >
                   <option value="Select">Please select the Province...</option>
                   <option value="British Columbia">British Columbia</option>
@@ -144,7 +145,6 @@ function AddCatt() {
                   name="city"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  required
                 />
                 <label htmlFor="breed" className="details__label label">
                   Breed
@@ -155,7 +155,6 @@ function AddCatt() {
                   name="breed"
                   id="breed"
                   value={breed}
-                  required
                 >
                   <option value="Select">Please select the breed...</option>
                   <option value="Maine Coon">Maine Coon</option>
@@ -174,7 +173,6 @@ function AddCatt() {
                   name="description"
                   onChange={(e) => setDescription(e.target.value)}
                   value={description}
-                  required
                 />
               </div>
             </div>
@@ -193,7 +191,6 @@ function AddCatt() {
                   name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required
                 />
                 <label htmlFor="phone" className="details__label label">
                   Phone Number
@@ -206,7 +203,6 @@ function AddCatt() {
                   name="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  required
                 />
                 <label htmlFor="email" className="details__label label">
                   Email
@@ -219,7 +215,6 @@ function AddCatt() {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                 />
                 <div className="details__header">
                   <h2 className="details__subheader">

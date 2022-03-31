@@ -88,9 +88,6 @@ function Home() {
             <p className="info__text">
               Create your cattery profile for your pet
             </p>
-            <Link to="/register" className="info__link">
-              Click here to create an account or login.
-            </Link>
           </div>
           <div className="info__img">
             <img className="info__icon" src={searchIcon} alt="search icon" />
@@ -107,6 +104,11 @@ function Home() {
           <div>
             <h2 className="info__subtitle">Connect</h2>
             <p className="info__text">Connect with the registered breeders.</p>
+          </div>
+          <div className="info__links">
+            <Link to="/signup" className="info__link">
+              Create an account or Login.
+            </Link>
           </div>
         </div>
       </div>
