@@ -1,9 +1,10 @@
 import heroRegister from "../../assets/images/cat.svg";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
+import logo from "../../assets/logo/logo.svg";
 
 const schema = yup.object().shape({
   email: yup.string().email().required("Username should be required please"),
@@ -39,8 +40,12 @@ function Login() {
     <section className="register">
       <div className="register__content">
         <div className="register__hero">
-          <h1 className="register__title">MeowFinder</h1>
-          <img className="register__image" src={heroRegister} alt="cat" />
+          <Link to={`/home`} className="register__logo-link">
+            <img className="register__logo" src={logo} alt="company logo" />
+          </Link>
+          <div className="register__background">
+            <img className="register__image" src={heroRegister} alt="cat" />
+          </div>
           <h2 className="register__text">Welcome to MeowFinder</h2>
         </div>
         <form className="register__form" onSubmit={handleSubmit(submitForm)}>
@@ -66,6 +71,15 @@ function Login() {
             </button>
           </div>
         </form>
+        <div className="register__login">
+          <p className="register__login-content">
+            Don't you have an account yet?
+          </p>
+          <Link to={`/signup`} className="register__link">
+            {" "}
+            Sign up
+          </Link>
+        </div>
       </div>
     </section>
   );

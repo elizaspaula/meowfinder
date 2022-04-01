@@ -107,7 +107,11 @@ function Home() {
           </div>
           <div className="info__links">
             <Link to="/signup" className="info__link">
-              Create an account or Login.
+              Create an account
+            </Link>
+            <p> or </p>
+            <Link to="/login" className="info__link">
+              Login
             </Link>
           </div>
         </div>

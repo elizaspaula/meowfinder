@@ -1,66 +1,39 @@
 import "./AddCatt.scss";
 import backArrow from "../../assets/icons/chevronleft.svg";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useForm } from "react-hook-form";
 
 function AddCatt() {
-  const [catteryname, setCatteryname] = useState("");
-  const [address, setAddress] = useState("");
-  const [country, setCountry] = useState("");
-  const [province, setProvince] = useState("");
-  const [city, setCity] = useState("");
-  const [breed, setBreed] = useState("");
-  const [description, setDescription] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
-  const [facebook, setFacebook] = useState("");
-  const [instagram, setInstagram] = useState("");
-  const [data, setData] = useState(null);
   const authToken = sessionStorage.getItem("authToken");
+  const { register, handleSubmit } = useForm();
+  const history = useHistory();
+  const onSubmit = (data) => {
+    const formData = new FormData();
 
-  const handleSubmit = (e) => {
-    console.log(e);
-    const newCattery = {
-      id: uuidv4(),
-      catteryName: catteryname,
-      address: address,
-      country: country,
-      province: province,
-      city: city,
-      breed: breed,
-      description: description,
-      name: name,
-      phone: phone,
-      email: email,
-      website: website,
-      facebook: facebook,
-      instagram: instagram,
-    };
+    for (let [field, value] of Object.entries(data)) {
+      console.log(field, value);
+
+      if (field === "picture" || field === "document") {
+        value.forEach((element) => {
+          formData.append(field, element[0]);
+        });
+      } else {
+        formData.append(field, value);
+      }
+    }
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/admin/cattery`, newCattery, {
+      .post(`${process.env.REACT_APP_API_URL}/admin/cattery`, formData, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
       })
-      .then((res) => {
-        setData(res.postData);
-        setCatteryname("");
-        setAddress("");
-        setProvince("");
-        setCity("");
-        setBreed("");
-        setDescription("");
-        setName("");
-        setPhone("");
-        setEmail("");
-        setWebsite("");
-        setFacebook("");
-        setInstagram("");
+      .then(() => {
+        history.push("/admin");
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -75,47 +48,43 @@ function AddCatt() {
               alt="back arrow"
             />
           </Link>
-          <h1 className="header-wrapper__text">Add New Cattery</h1>
+          <h1 className="header-wrapper__text">Add a New Cattery</h1>
         </div>
-        <form className="cattery-form" onSubmit={handleSubmit}>
+        <form
+          enctype="multipart/form-data"
+          className="cattery-form"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="details__wrapper">
             <div className="details__container">
               <div className="details__form">
-                <h2 className="details__subheader">Cattery Information</h2>{" "}
+                <h2 className="details__subheader">Cattery Information</h2>
                 <label htmlFor="catteryname" className="details__label label">
                   Cattery Name
                 </label>
                 <input
                   type="text"
                   className="details__input"
-                  value={catteryname}
                   placeholder="Cattery Name"
                   id="catteryname"
-                  name="catteryname"
-                  onChange={(e) => setCatteryname(e.target.value)}
+                  name="catteryName"
+                  {...register("catteryName")}
                 />
                 <label htmlFor="address" className="details__label label">
                   Address
                 </label>
                 <input
                   type="text"
-                  value={address}
                   className="details__input"
                   placeholder="Enter the address"
                   id="address"
                   name="address"
-                  onChange={(e) => setAddress(e.target.value)}
+                  {...register("address")}
                 />
                 <label htmlFor="country" className="details__label label">
                   Country
                 </label>
-                <select
-                  className="details__select"
-                  onChange={(e) => setCountry(e.target.value)}
-                  name="country"
-                  id="country"
-                  value={country}
-                >
+                <select className="details__select" name="country" id="country">
                   <option value="Canada">Canada</option>
                 </select>
                 <label htmlFor="province" className="details__label label">
@@ -123,10 +92,9 @@ function AddCatt() {
                 </label>
                 <select
                   className="details__select"
-                  onChange={(e) => setProvince(e.target.value)}
                   name="province"
                   id="province"
-                  value={province}
+                  {...register("province")}
                 >
                   <option value="Select">Please select the Province...</option>
                   <option value="British Columbia">British Columbia</option>
@@ -143,18 +111,16 @@ function AddCatt() {
                   placeholder="Enter the City"
                   id="city"
                   name="city"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
+                  {...register("city")}
                 />
                 <label htmlFor="breed" className="details__label label">
                   Breed
                 </label>
                 <select
                   className="details__select"
-                  onChange={(e) => setBreed(e.target.value)}
                   name="breed"
                   id="breed"
-                  value={breed}
+                  {...register("breed")}
                 >
                   <option value="Select">Please select the breed...</option>
                   <option value="Maine Coon">Maine Coon</option>
@@ -171,8 +137,7 @@ function AddCatt() {
                   placeholder="Please enter a description..."
                   id="description"
                   name="description"
-                  onChange={(e) => setDescription(e.target.value)}
-                  value={description}
+                  {...register("description")}
                 />
               </div>
             </div>
@@ -189,8 +154,7 @@ function AddCatt() {
                   placeholder="Enter your full name"
                   id="name"
                   name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  {...register("name")}
                 />
                 <label htmlFor="phone" className="details__label label">
                   Phone Number
@@ -201,8 +165,7 @@ function AddCatt() {
                   placeholder="Enter the phone number"
                   id="phone"
                   name="phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  {...register("phone")}
                 />
                 <label htmlFor="email" className="details__label label">
                   Email
@@ -213,8 +176,7 @@ function AddCatt() {
                   placeholder="Enter your email"
                   id="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  {...register("email")}
                 />
                 <div className="details__header">
                   <h2 className="details__subheader">
@@ -230,8 +192,7 @@ function AddCatt() {
                   placeholder="Enter your website"
                   id="website"
                   name="website"
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
+                  {...register("website")}
                 />
                 <label htmlFor="facebook" className="details__label label">
                   Facebook
@@ -242,8 +203,7 @@ function AddCatt() {
                   placeholder="Enter the Facebook URL"
                   id="facebook"
                   name="facebook"
-                  value={facebook}
-                  onChange={(e) => setFacebook(e.target.value)}
+                  {...register("facebook")}
                 />
                 <label htmlFor="instagram" className="details__label label">
                   Instagram
@@ -254,8 +214,7 @@ function AddCatt() {
                   placeholder="Enter the Instagram URL"
                   id="instagram"
                   name="instagram"
-                  value={instagram}
-                  onChange={(e) => setInstagram(e.target.value)}
+                  {...register("instagram")}
                 />
               </div>
             </div>
@@ -264,23 +223,29 @@ function AddCatt() {
           <div className="details__container">
             <div className="upload-photos__form">
               <h3 className="details__subheader">Upload Photos</h3>
-              <button
-                type="button"
+              <input
+                type="file"
                 className="save-btn upload"
-                id="add-cattery"
-              >
-                + Add Photos
-              </button>
+                {...register("picture[0]")}
+              />
+              <input
+                type="file"
+                className="save-btn upload"
+                {...register("picture[1]")}
+              />
             </div>
             <div className="upload-documents__form">
               <h3 className="details__subheader">Upload Documents</h3>
-              <button
-                type="button"
+              <input
+                type="file"
                 className="save-btn upload"
-                id="add-cattery"
-              >
-                + Add Documents
-              </button>
+                {...register("document[0]")}
+              />
+              <input
+                type="file"
+                className="save-btn upload"
+                {...register("document[1]")}
+              />
             </div>
           </div>
 
@@ -289,7 +254,7 @@ function AddCatt() {
               Cancel
             </Link>
             <button type="submit" className="save-btn" id="add-cattery">
-              + Add Cattery
+              + Save Cattery
             </button>
           </div>
         </form>
@@ -299,3 +264,6 @@ function AddCatt() {
 }
 
 export default AddCatt;
+
+//TO DO
+//Upload Forms -- Ternary to display message if the there is a document/picture or not

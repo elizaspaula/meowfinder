@@ -1,13 +1,16 @@
 import backArrow from "../../assets/icons/chevronleft.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { set, useForm } from "react-hook-form";
 
-function EditCatt(props) {
+function EditCatt() {
   const { id } = useParams();
   const { register, handleSubmit, setValue } = useForm({});
   const authToken = sessionStorage.getItem("authToken");
+  const history = useHistory();
+  const [picture, setPicture] = useState([]);
+  const [document, setDocument] = useState([]);
 
   useEffect(() => {
     axios
@@ -26,6 +29,8 @@ function EditCatt(props) {
         setValue("website", results.data.website);
         setValue("facebook", results.data.facebook);
         setValue("instagram", results.data.instagram);
+        setPicture(results.data.picture);
+        setDocument(results.data.document);
       });
   }, []);
 
@@ -36,8 +41,8 @@ function EditCatt(props) {
           Authorization: `Bearer ${authToken}`,
         },
       })
-      .then((data) => {
-        props.history.push("/admin");
+      .then(() => {
+        history.push("/admin");
       })
       .catch((error) => {
         console.log(error);
@@ -225,6 +230,11 @@ function EditCatt(props) {
 
           <div className="details__container">
             <div className="upload-photos__form">
+              {picture.map((photo) => (
+                <img
+                  src={`${process.env.REACT_APP_API_URL}/uploads/${photo}`}
+                />
+              ))}
               <h3 className="details__subheader">Upload Photos</h3>
               <button
                 type="button"
@@ -235,6 +245,15 @@ function EditCatt(props) {
               </button>
             </div>
             <div className="upload-documents__form">
+              {document.map((doc) => (
+                <a
+                  href={`${process.env.REACT_APP_API_URL}/uploads/${doc}`}
+                  target="_blank"
+                >
+                  {doc}
+                </a>
+              ))}
+
               <h3 className="details__subheader">Upload Documents</h3>
               <button
                 type="button"

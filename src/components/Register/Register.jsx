@@ -80,7 +80,7 @@ function Register() {
           </p>
           <Link to={`/login`} className="register__link">
             {" "}
-            Click here to Login
+            Login
           </Link>
         </div>
       </div>
