@@ -14,10 +14,12 @@ function AddCatt() {
     for (let [field, value] of Object.entries(data)) {
       console.log(field, value);
 
-      if (field === "picture" || field === "document") {
+      if (field === "picture") {
         value.forEach((element) => {
           formData.append(field, element[0]);
         });
+      } else if (field === "document") {
+        formData.append(field, value[0]);
       } else {
         formData.append(field, value);
       }
@@ -280,17 +282,7 @@ function AddCatt() {
                 <input
                   type="file"
                   className="file-upload__input"
-                  {...register("document[0]")}
-                />
-                <input
-                  type="file"
-                  className="file-upload__input"
-                  {...register("document[1]")}
-                />
-                <input
-                  type="file"
-                  className="file-upload__input"
-                  {...register("document[2]")}
+                  {...register("document")}
                 />
               </div>
             </div>

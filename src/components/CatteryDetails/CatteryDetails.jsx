@@ -4,12 +4,11 @@ import "./CatteryDetails.scss";
 import checkIcon from "../../assets/icons/circle-check-solid.svg";
 import HeaderHav from "../HeaderNav/HeaderNav";
 import Footer from "../Footer/Footer";
+import catcard from "../../assets/images/cat01.jpeg";
 
 function CatteryDetails(props) {
-  console.log(props);
   const [catteryDetails, setCatteryDetails] = useState({});
   const currentID = props.match.params.id;
-  console.log(currentID);
 
   useEffect(() => {
     axios
@@ -108,6 +107,17 @@ function CatteryDetails(props) {
           </div>
           <div className="cattery-details__gallery">
             <h3 className="cattery-details__subtitle">Gallery</h3>
+            <div className="cattery-cards">
+              {catteryDetails.picture?.map((photo) => (
+                <div class="cattery-cards__card">
+                  <img
+                    className="cattery-cards__img"
+                    src={`${process.env.REACT_APP_API_URL}/uploads/${photo}`}
+                    alt="cat"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

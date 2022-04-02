@@ -107,3 +107,16 @@
     width: 120px;
   }
 }
+
+.cattery-cards {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+  }
+}

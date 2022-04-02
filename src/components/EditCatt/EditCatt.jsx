@@ -275,16 +275,14 @@ function EditCatt() {
             </div>
             <h3 className="upload-form__subheader">Upload Documents</h3>
             <div className="upload-form__documents">
-              {document.map((doc) => (
-                <a
-                  href={`${process.env.REACT_APP_API_URL}/uploads/${doc}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="upload-form__documents"
-                >
-                  <p>Download: {doc}</p>
-                </a>
-              ))}
+              <a
+                href={`${process.env.REACT_APP_API_URL}/uploads/${document}`}
+                target="_blank"
+                rel="noreferrer"
+                className="upload-form__documents"
+              >
+                <p>Download: {document}</p>
+              </a>
             </div>
           </div>
 
