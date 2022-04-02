@@ -35,9 +35,14 @@ body {
   }
 }
 .label,
-.btn,
-.links {
+.btn {
   font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: $demi;
+}
+
+.links {
+  font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: $demi;
 }
@@ -53,7 +58,7 @@ body {
 
   //Section Header
   h2 {
-    font-size: 0.75rem;
+    font-size: 1.375rem;
     line-height: 1.25rem;
     font-weight: $bold;
   }
@@ -76,10 +81,15 @@ body {
 
   //Labels & Buttons
   .label,
-  .btn,
-  .links {
+  .btn {
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: $bold;
+  }
+
+  .links {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: $demi;
   }
 }

@@ -15,14 +15,14 @@ function HeaderHav(props) {
           <div className="nav__right">
             <NavLink
               to="/home"
-              className="nav__link link"
+              className="nav__link links"
               activeClassName="nav__link--highlight"
             >
               {props.firstLink}
             </NavLink>
             <NavLink
               to="/catteries"
-              className="nav__link link"
+              className="nav__link links"
               activeClassName="nav__link--highlight"
             >
               {props.secondLink}

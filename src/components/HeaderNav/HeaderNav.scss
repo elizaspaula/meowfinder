@@ -1,7 +1,5 @@
-@use "../../styles/fonts" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/colors" as *;
-@use "../../styles/typography" as *;
 
 .header {
   background-color: $global-color;
@@ -10,6 +8,10 @@
   top: 0;
   width: 100%;
   opacity: 0.85;
+
+  @include desktop {
+    margin: 0 auto;
+  }
 }
 
 .nav {
@@ -17,9 +19,22 @@
   align-items: center;
   justify-content: space-around;
 
+  @include tablet {
+    justify-content: flex-start;
+  }
+
   &__logo {
-    width: 150px;
-    height: 50px;
+    width: 9.375rem;
+    height: 3.125rem;
+
+    @include tablet {
+      width: 11.25rem;
+    }
+
+    @include desktop {
+      width: 15rem;
+      height: 3.75rem;
+    }
   }
 
   &__link {
@@ -36,5 +51,9 @@
   &__right {
     display: flex;
     gap: 1rem;
+
+    @include desktop {
+      gap: 2 rem;
+    }
   }
 }

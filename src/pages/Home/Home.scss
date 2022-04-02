@@ -6,32 +6,80 @@
 .home {
   padding: 1rem;
   @include background-img;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    margin: 0 auto;
+  }
 }
 
 .hero {
+  @include tablet {
+    width: 60%;
+  }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      padding: 3rem 0 1rem 0;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    @include desktop {
+      margin: 0 auto;
+    }
+  }
+
   &__title {
     padding-bottom: 1rem;
     padding-top: 4.125rem;
+    @include tablet {
+      padding-top: 0;
+    }
   }
   &__img {
-    padding-bottom: 1rem;
+    padding: 1rem;
     text-align: center;
+  }
+
+  &__image {
+    @include tablet {
+      width: 16rem;
+    }
+
+    @include desktop {
+      width: 19rem;
+    }
   }
 }
 
 .info {
   background-color: $global-color;
-  padding: 1.5rem;
+  padding: 1.5rem 0 2rem 0;
   margin-top: 1.5rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  @include tablet {
+    padding: 2rem 0rem 2.5rem 0rem;
+  }
 
   &__title {
     padding-bottom: 1rem;
     text-align: center;
+    @include tablet {
+      padding: 3rem 0;
+    }
   }
 
   &__img {
     text-align: center;
+
+    @include tablet {
+      width: 20%;
+    }
   }
 
   &__subtitle {
@@ -47,6 +95,11 @@
   &__icon {
     width: 3.5rem;
     height: 4.5rem;
+
+    @include tablet {
+      width: 3.75rem;
+      height: 5rem;
+    }
   }
 
   &__link {
@@ -54,11 +107,28 @@
   }
 
   &__links {
-    padding: 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     cursor: pointer;
     text-align: center;
     background-color: $background-color;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  &__wrapper {
+    padding: 1rem;
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 4rem;
+    }
+
+    @include desktop {
+      margin: 0 auto;
+    }
   }
 }
 
@@ -68,35 +138,65 @@
   padding: 1.5rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+    height: 100px;
+  }
+
+  @include desktop {
+    gap: 2.5rem;
+  }
   &__button {
     padding-top: 0.625rem;
     text-align: center;
     display: flex;
     justify-content: center;
-    color: white;
+
+    @include tablet {
+      padding-top: 0;
+    }
   }
 
   &__btn {
     @include save-btn;
+    @include tablet {
+      width: 15.625rem;
+    }
   }
 
   &__content-btn {
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     font-weight: $demi;
     flex: 1;
   }
 
   &__select {
     @include input-field;
+    @include tablet {
+      margin-bottom: 0;
+    }
   }
 
   &__label {
     padding-bottom: 0.5rem;
+    @include tablet {
+      padding-bottom: 0;
+    }
   }
 
   &__icon {
     width: 15px;
     height: 15px;
     padding-right: 2px;
+
+    @include tablet {
+      width: 25px;
+      height: 15px;
+      padding-right: 5px;
+    }
   }
 }
