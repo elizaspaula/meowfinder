@@ -40,12 +40,9 @@
   }
 
   &__img {
-    width: 230px;
-
-    @include tablet {
-      width: 225px;
-      height: 9.375rem;
-    }
+    width: 225px;
+    height: 9.375rem;
+    object-fit: cover;
   }
 
   &__documents {

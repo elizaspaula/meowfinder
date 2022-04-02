@@ -4,9 +4,29 @@
 @use "../../styles/colors" as *;
 
 .cattery-details {
-  padding: 0 1rem;
+  padding: 0 2rem;
   padding-top: 4.125rem;
   @include background-img;
+
+  &__registry {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    width: 6.25rem;
+    border-radius: 20px;
+    background-color: rgb(21 132 99 / 7%);
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(117, 116, 111, 0.3);
+  }
+
+  &__group-header {
+    display: flex;
+    align-content: center;
+    padding-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__wrapper {
     @include cards;
@@ -17,20 +37,16 @@
     border-bottom: 1px solid $outline-divider-color;
   }
 
-  &__contact {
-    border-top: 1px solid $outline-divider-color;
-  }
-  &__title {
-    padding-bottom: 1rem;
-    text-transform: uppercase;
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid $outline-divider-color;
   }
 
-  &__content {
-    display: flex;
+  &__title {
     padding-bottom: 0.5rem;
-    align-items: center;
-    gap: 0.625rem;
-    padding-top: 1rem;
+    text-transform: uppercase;
   }
 
   &__icon {
@@ -38,20 +54,56 @@
     height: 0.9375rem;
   }
 
-  &__label {
-    font-weight: $bold;
+  &__status {
     color: green;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   &__subtitle {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    color: $interactive-color;
+    text-transform: uppercase;
   }
 
   &__about {
-    padding-top: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid $outline-divider-color;
   }
 
   &__description {
     text-align: justify;
+    padding: 0 1rem;
+  }
+
+  &__gallery {
+    padding-top: 1rem;
+  }
+
+  &__content {
+    padding: 0 1rem;
+  }
+
+  &__text {
+    padding-bottom: 0.25rem;
+  }
+
+  &__label {
+    font-weight: $demi;
+    padding-right: 8px;
+  }
+
+  .city {
+    padding-bottom: 2.25rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 120px;
   }
 }

@@ -29,7 +29,11 @@ function Catteries(props) {
     <>
       <HeaderHav firstLink="Home" secondLink="Listing" />
       <div className="catteries">
-        <h1 className="catteries__title">List of Registered Catteries</h1>
+        <div className="catteries__hero">
+          <div className="catteries__wrapper">
+            <h1 className="catteries__title">List of Catteries</h1>
+          </div>
+        </div>
         <CatteryList catteryList={catteryList} />
       </div>
       <Footer />

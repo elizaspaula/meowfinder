@@ -259,17 +259,17 @@ function AddCatt() {
               <div className="file-upload">
                 <input
                   type="file"
-                  className="custom-file-input"
+                  className="file-upload__input"
                   {...register("picture[0]")}
                 />
                 <input
                   type="file"
-                  className="custom-file-input"
+                  className="file-upload__input"
                   {...register("picture[1]")}
                 />
                 <input
                   type="file"
-                  className="custom-file-input"
+                  className="file-upload__input"
                   {...register("picture[2]")}
                 />
               </div>
@@ -279,17 +279,17 @@ function AddCatt() {
               <div className="file-upload">
                 <input
                   type="file"
-                  className="custom-file-input"
+                  className="file-upload__input"
                   {...register("document[0]")}
                 />
                 <input
                   type="file"
-                  className="custom-file-input"
+                  className="file-upload__input"
                   {...register("document[1]")}
                 />
                 <input
                   type="file"
-                  className="custom-file-input"
+                  className="file-upload__input"
                   {...register("document[2]")}
                 />
               </div>
@@ -311,6 +311,3 @@ function AddCatt() {
 }
 
 export default AddCatt;
-
-//TO DO
-//Upload Forms -- Ternary to display message if the there is a document/picture or not
