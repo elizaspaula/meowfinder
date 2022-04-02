@@ -13,15 +13,21 @@
 }
 
 .header-wrapper {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: background-color;
+  background-image: radial-gradient(
+    #16419f 0.8500000000000001px,
+    #f8edeb 0.8500000000000001px
+  );
+  background-size: 17px 17px;
 
   &__subheader {
     display: flex;
     align-items: center;
-    font-size: 0.75re;
-    background-color: $global-color;
+    font-size: 0.75rem;
     padding: 1.5rem;
-    border-bottom: 1px solid $outline-divider-color;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 
   &__icon {
@@ -63,6 +69,16 @@
     text-align: left;
   }
 
+  .tablet {
+    display: none;
+  }
+
+  .mobile {
+    @include tablet {
+      display: none;
+    }
+  }
+
   &__subheader {
     padding-bottom: 1.5rem;
     padding-top: 1rem;
@@ -72,7 +88,8 @@
   &__wrapper {
     @include tablet {
       display: flex;
-      gap: 6rem;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
@@ -80,8 +97,7 @@
 .buttons {
   @include flexed(row, space-between, center);
   gap: 1.5rem;
-  padding: 1rem 1.5rem;
-  background-color: $global-color;
+  padding: 1.5rem;
 }
 
 .cancel-btn {
@@ -90,11 +106,38 @@
 
 .save-btn {
   @include save-btn;
-  width: 50%;
 }
 
-.upload {
-  width: 100%;
-  background-color: #554b48;
-  color: white;
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Choose file";
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 400;
+  font-size: 10pt;
+  transition: 0.5s ease-in-out;
+}
+.custom-file-input:hover::before {
+  border-color: $interactive-color;
+  color: $interactive-color;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }

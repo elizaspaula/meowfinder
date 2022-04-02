@@ -1,0 +1,58 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.mobile {
+  @include tablet {
+    display: none;
+  }
+}
+
+.tablet {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.details__textarea__description {
+  @include tablet {
+    @include input-field-description;
+  }
+}
+.upload-form {
+  &__subheader {
+    padding: 1rem 0;
+  }
+
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  }
+
+  &__img {
+    width: 230px;
+
+    @include tablet {
+      width: 225px;
+      height: 9.375rem;
+    }
+  }
+
+  &__documents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    @include links;
+  }
+}

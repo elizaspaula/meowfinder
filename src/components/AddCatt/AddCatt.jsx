@@ -128,12 +128,30 @@ function AddCatt() {
                   <option value="Ragdoll">Ragdoll</option>
                   <option value="Brazilian Cat">Brazilian Cat</option>
                 </select>
-                <label htmlFor="description" className="details__label label">
+                <label htmlFor="registry" className="details__label label">
+                  Registry
+                </label>
+                <select
+                  className="details__select"
+                  name="registry"
+                  id="registry"
+                  {...register("registry")}
+                >
+                  <option value="Select">Please select the registry...</option>
+                  <option value="tica">TICA</option>
+                  <option value="cfa">CFA</option>
+                  <option value="gccf">GCCF</option>
+                  <option value="acfa">ACFA</option>
+                </select>
+                <label
+                  htmlFor="description"
+                  className="details__label mobile label"
+                >
                   Description
                 </label>
                 <textarea
                   type="text"
-                  className="details__textarea"
+                  className="details__textarea mobile"
                   placeholder="Please enter a description..."
                   id="description"
                   name="description"
@@ -219,42 +237,71 @@ function AddCatt() {
               </div>
             </div>
           </div>
+          <div className="details__container tablet">
+            <label htmlFor="description" className="details__label label">
+              Description
+            </label>
+            <textarea
+              type="text"
+              rows="30"
+              cols="40"
+              className="details__textarea__description tablet"
+              placeholder="Please enter a description..."
+              id="description"
+              name="description"
+              {...register("description")}
+            />
+          </div>
 
           <div className="details__container">
             <div className="upload-photos__form">
               <h3 className="details__subheader">Upload Photos</h3>
-              <input
-                type="file"
-                className="save-btn upload"
-                {...register("picture[0]")}
-              />
-              <input
-                type="file"
-                className="save-btn upload"
-                {...register("picture[1]")}
-              />
+              <div className="file-upload">
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  {...register("picture[0]")}
+                />
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  {...register("picture[1]")}
+                />
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  {...register("picture[2]")}
+                />
+              </div>
             </div>
             <div className="upload-documents__form">
               <h3 className="details__subheader">Upload Documents</h3>
-              <input
-                type="file"
-                className="save-btn upload"
-                {...register("document[0]")}
-              />
-              <input
-                type="file"
-                className="save-btn upload"
-                {...register("document[1]")}
-              />
+              <div className="file-upload">
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  {...register("document[0]")}
+                />
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  {...register("document[1]")}
+                />
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  {...register("document[2]")}
+                />
+              </div>
             </div>
           </div>
 
           <div className="buttons">
-            <Link to="/admin" className="cancel-btn">
+            <Link to="/admin" className="cancel-btn btn">
               Cancel
             </Link>
-            <button type="submit" className="save-btn" id="add-cattery">
-              + Save Cattery
+            <button type="submit" className="save-btn btn" id="add-cattery">
+              + Save
             </button>
           </div>
         </form>

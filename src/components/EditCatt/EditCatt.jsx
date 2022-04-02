@@ -1,8 +1,9 @@
+import "./EditCatt.scss";
 import backArrow from "../../assets/icons/chevronleft.svg";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 function EditCatt() {
   const { id } = useParams();
@@ -22,6 +23,7 @@ function EditCatt() {
         setValue("province", results.data.province);
         setValue("city", results.data.city);
         setValue("breed", results.data.breed);
+        setValue("registry", results.data.registry);
         setValue("description", results.data.description);
         setValue("name", results.data.name);
         setValue("phone", results.data.phone);
@@ -136,12 +138,30 @@ function EditCatt() {
                   <option value="Ragdoll">Ragdoll</option>
                   <option value="Brazilian Cat">Brazilian Cat</option>
                 </select>
-                <label htmlFor="description" className="details__label label">
+                <label htmlFor="registry" className="details__label label">
+                  Registry
+                </label>
+                <select
+                  className="details__select"
+                  name="registry"
+                  id="registry"
+                  {...register("registry")}
+                >
+                  <option value="Select">Please select the registry...</option>
+                  <option value="tica">TICA</option>
+                  <option value="cfa">CFA</option>
+                  <option value="gccf">GCCF</option>
+                  <option value="acfa">ACFA</option>
+                </select>
+                <label
+                  htmlFor="description"
+                  className="details__label mobile label"
+                >
                   Description
                 </label>
                 <textarea
                   type="text"
-                  className="details__textarea"
+                  className="details__textarea mobile"
                   placeholder="Please enter a description..."
                   id="description"
                   name="description"
@@ -227,50 +247,53 @@ function EditCatt() {
               </div>
             </div>
           </div>
-
+          <div className="details__container tablet">
+            <label htmlFor="description" className="details__label label">
+              Description
+            </label>
+            <textarea
+              type="text"
+              rows="30"
+              cols="40"
+              className="details__textarea__description tablet"
+              placeholder="Please enter a description..."
+              id="description"
+              name="description"
+              {...register("description")}
+            />
+          </div>
           <div className="details__container">
-            <div className="upload-photos__form">
+            <h3 className="upload-form__subheader">Upload Photos</h3>
+            <div className="upload-form__photos">
               {picture.map((photo) => (
                 <img
+                  className="upload-form__img"
                   src={`${process.env.REACT_APP_API_URL}/uploads/${photo}`}
+                  alt={photo}
                 />
               ))}
-              <h3 className="details__subheader">Upload Photos</h3>
-              <button
-                type="button"
-                className="save-btn upload"
-                id="add-cattery"
-              >
-                + Edit Photos
-              </button>
             </div>
-            <div className="upload-documents__form">
+            <h3 className="upload-form__subheader">Upload Documents</h3>
+            <div className="upload-form__documents">
               {document.map((doc) => (
                 <a
                   href={`${process.env.REACT_APP_API_URL}/uploads/${doc}`}
                   target="_blank"
+                  rel="noreferrer"
+                  className="upload-form__documents"
                 >
-                  {doc}
+                  <p>Download: {doc}</p>
                 </a>
               ))}
-
-              <h3 className="details__subheader">Upload Documents</h3>
-              <button
-                type="button"
-                className="save-btn upload"
-                id="add-cattery"
-              >
-                + Edit Documents
-              </button>
             </div>
           </div>
 
           <div className="buttons">
-            <Link to="/admin" className="cancel-btn">
+            <Link to="/admin" className="cancel-btn btn">
               Cancel
             </Link>
-            <button type="submit" className="save-btn" id="add-cattery">
-              + Save Cattery
+            <button type="submit" className="save-btn btn" id="add-cattery">
+              + Save
             </button>
           </div>
         </form>
