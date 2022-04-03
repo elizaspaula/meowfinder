@@ -8,6 +8,7 @@
   top: 0;
   width: 100%;
   opacity: 0.85;
+  z-index: 1;
 
   @include desktop {
     margin: 0 auto;

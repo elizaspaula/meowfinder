@@ -7,40 +7,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 4rem 5vw;
+  margin: 2rem 3rem;
   padding: 0;
   justify-content: center;
   list-style-type: none;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-wrap: wrap;
-  // gap: 2rem;
-  // &__card {
-  //   margin-top: 1rem;
-  //   @include cards;
-  //   width: 22.5rem;
-  //   height: 14.0625rem;
-  // }
-
-  // &__image {
-  //   width: 22.5rem;
-  //   height: 14.0625rem;
-  // }
 }
 
 :root {
   --surface-color: #fff;
   --curve: 10;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: #fef8f8;
 }
 
 .card {
@@ -80,7 +55,6 @@ body {
   align-items: center;
   gap: 2em;
   padding: 0.5rem 1.5rem;
-  border-radius: calc(var(--curve) * 1px) 0 0 0;
   background-color: var(--surface-color);
   transform: translateY(-100%);
   transition: 0.2s ease-in-out;
@@ -121,7 +95,6 @@ body {
   padding: 0 2em 2em;
   margin: 0;
   font-size: 0.8em;
-
   color: $global-text-light;
   display: -webkit-box;
   -webkit-box-orient: vertical;

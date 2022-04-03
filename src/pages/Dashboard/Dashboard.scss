@@ -36,6 +36,9 @@
     color: $global-text-light;
     text-decoration: none;
     transition: 0.5s ease-in-out;
+    @include cancel-btn;
+    width: 6.25rem;
+    height: 2.1875rem;
     &:hover {
       color: $interactive-color;
     }
@@ -43,26 +46,36 @@
 }
 
 .dashboard-list {
-  padding: 1rem;
-  &__card {
-    padding: 1rem;
-    margin-top: 2rem;
+  padding: 1rem 2rem 2rem 2rem;
 
-    @include cards;
-  }
-
-  &__title {
-    border-bottom: 1px solid $outline-divider-color;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #bdc5d5;
     padding-bottom: 1rem;
   }
 
-  &__text-first {
-    padding-top: 0.5rem;
+  &__title,
+  &__breed {
+    text-transform: uppercase;
   }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+  &__card {
+    padding: 2rem;
+    margin-top: 2rem;
+    @include cards;
+    width: 37.5rem;
+  }
+
   &__btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding-top: 1rem;
+    gap: 1rem;
   }
 
   &__button {
@@ -77,5 +90,23 @@
     @include cancel-btn;
     width: 5.125rem;
     height: 2rem;
+  }
+
+  &__information {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    align-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #bdc5d5;
+  }
+
+  &__subtitle {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__label {
+    font-weight: 600;
   }
 }

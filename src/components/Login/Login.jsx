@@ -29,10 +29,12 @@ function Login() {
         if (response.data.token) {
           // save to sessionStorage our key
           sessionStorage.setItem("authToken", response.data.token);
-          history.push("/admin");
         } else {
           console.log("error can't login");
         }
+      })
+      .then(() => {
+        history.push("/admin");
       });
   };
 
