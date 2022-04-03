@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <>
-      <HeaderHav firstLink="Home" secondLink="Listing" />
+      <HeaderHav />
       <div className="home">
         <div className="hero__wrapper">
           <div className="hero">
@@ -29,6 +29,9 @@ function Home() {
               Meow Finder is an app for bringing ethical and registered breeders
               together.
             </p>
+            <Link to={`/signup`} className="hero__btn-hero btn">
+              Get Started
+            </Link>
           </div>
           <div className="hero__img">
             <img className="hero__image" src={hero} alt="hero" />
@@ -99,16 +102,6 @@ function Home() {
                 Connect with the registered breeders.
               </p>
             </div>
-          </div>
-
-          <div className="info__links">
-            <Link to="/signup" className="info__link">
-              Create an account
-            </Link>
-            <p> or </p>
-            <Link to="/login" className="info__link">
-              Login
-            </Link>
           </div>
         </div>
       </div>

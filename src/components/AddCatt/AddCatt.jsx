@@ -156,8 +156,8 @@ function AddCatt() {
                   className="details__textarea mobile"
                   placeholder="Please enter a description..."
                   id="description"
-                  name="description"
-                  {...register("description")}
+                  name="descriptionmobile"
+                  {...register("descriptionmobile")}
                 />
               </div>
             </div>
@@ -245,8 +245,6 @@ function AddCatt() {
             </label>
             <textarea
               type="text"
-              rows="30"
-              cols="40"
               className="details__textarea__description tablet"
               placeholder="Please enter a description..."
               id="description"

@@ -17,8 +17,12 @@
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @include tablet {
     width: 60%;
+    align-items: flex-start;
   }
 
   &__wrapper {
@@ -40,6 +44,10 @@
       padding-top: 0;
     }
   }
+
+  &__text {
+    padding-bottom: 1rem;
+  }
   &__img {
     padding: 1rem;
     text-align: center;
@@ -52,6 +60,13 @@
 
     @include desktop {
       width: 19rem;
+    }
+  }
+
+  &__btn-hero {
+    @include save-btn;
+    @include tablet {
+      width: 9.375rem;
     }
   }
 }
@@ -169,7 +184,6 @@
   }
 
   &__content-btn {
-    font-size: 0.9375rem;
     font-weight: $demi;
     flex: 1;
   }

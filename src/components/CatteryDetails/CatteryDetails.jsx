@@ -4,7 +4,6 @@ import "./CatteryDetails.scss";
 import checkIcon from "../../assets/icons/circle-check-solid.svg";
 import HeaderHav from "../HeaderNav/HeaderNav";
 import Footer from "../Footer/Footer";
-import catcard from "../../assets/images/cat01.jpeg";
 
 function CatteryDetails(props) {
   const [catteryDetails, setCatteryDetails] = useState({});
@@ -43,17 +42,23 @@ function CatteryDetails(props) {
                   </h3>
                 </div>
                 <div className="cattery-details__buttons">
-                  <input
+                  <a
+                    href={`${process.env.REACT_APP_API_URL}/uploads/${catteryDetails.document}`}
                     className="cattery-details__button save-btn btn"
-                    type="button"
-                    value="Documents"
-                  />
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Documents
+                  </a>
 
-                  <input
+                  <a
                     className="cattery-details__button cancel-btn btn"
-                    type="button"
-                    value="Contact us"
-                  />
+                    href={`mailto:${catteryDetails.email}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Send email
+                  </a>
                 </div>
               </div>
             </div>
@@ -90,8 +95,8 @@ function CatteryDetails(props) {
                   {catteryDetails.phone}
                 </p>
                 <p className="cattery-details__text">
-                  <span className="cattery-details__label"> Email:</span>{" "}
-                  {catteryDetails.email}
+                  <span className="cattery-details__label"> Website:</span>{" "}
+                  {catteryDetails.website}
                 </p>
               </div>
             </div>

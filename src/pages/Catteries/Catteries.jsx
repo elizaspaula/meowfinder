@@ -27,7 +27,7 @@ function Catteries(props) {
 
   return (
     <>
-      <HeaderHav firstLink="Home" secondLink="Listing" />
+      <HeaderHav />
       <div className="catteries">
         <div className="catteries__hero">
           <div className="catteries__wrapper">

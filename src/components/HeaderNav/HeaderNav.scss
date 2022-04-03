@@ -16,16 +16,18 @@
 
 .nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
 
-  @include tablet {
+  &__group-right {
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
   }
 
   &__logo {
     width: 9.375rem;
-    height: 3.125rem;
+    height: 3.75rem;
 
     @include tablet {
       width: 11.25rem;
@@ -55,5 +57,11 @@
     @include desktop {
       gap: 2 rem;
     }
+  }
+
+  &__login {
+    @include cancel-btn;
+    width: 6.25rem;
+    height: 2.1875rem;
   }
 }

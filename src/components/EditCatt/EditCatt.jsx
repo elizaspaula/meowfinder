@@ -25,6 +25,7 @@ function EditCatt() {
         setValue("breed", results.data.breed);
         setValue("registry", results.data.registry);
         setValue("description", results.data.description);
+        setValue("descriptionmobile", results.data.descriptionmobile);
         setValue("name", results.data.name);
         setValue("phone", results.data.phone);
         setValue("email", results.data.email);
@@ -164,8 +165,8 @@ function EditCatt() {
                   className="details__textarea mobile"
                   placeholder="Please enter a description..."
                   id="description"
-                  name="description"
-                  {...register("description")}
+                  name="descriptionmobile"
+                  {...register("descriptionmobile")}
                 />
               </div>
             </div>
