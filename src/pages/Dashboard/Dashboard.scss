@@ -47,6 +47,7 @@
 
 .dashboard-list {
   padding: 1rem 2rem 2rem 2rem;
+  overflow: scroll;
 
   &__header {
     display: flex;

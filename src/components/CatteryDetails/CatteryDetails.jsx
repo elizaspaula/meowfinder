@@ -66,38 +66,44 @@ function CatteryDetails(props) {
           <div className="cattery-details__group">
             <div className="cattery-details__information">
               <h3 className="cattery-details__subtitle">Location </h3>
-              <div className="cattery-details__content">
-                <p className="cattery-details__text">
-                  <span className="cattery-details__label"> Address: </span>{" "}
-                  {catteryDetails.address}
-                </p>
 
-                <p className="cattery-details__text">
-                  <span className="cattery-details__label city"> City:</span>{" "}
-                  {catteryDetails.city}
-                </p>
-
-                <p className="cattery-details__text">
-                  <span className="cattery-details__label">Province:</span>{" "}
-                  {catteryDetails.province}
-                </p>
+              <div className="cattery-details__content-group">
+                <div className="cattery-details__content-label">
+                  <p className="cattery-details__label"> Address: </p>
+                  <p className="cattery-details__label"> City: </p>
+                  <p className="cattery-details__label"> Province: </p>
+                </div>
+                <div className="cattery-details__content">
+                  <p className="cattery-details__text">
+                    {catteryDetails.address}
+                  </p>
+                  <p className="cattery-details__text">{catteryDetails.city}</p>
+                  <p className="cattery-details__text">
+                    {catteryDetails.province}
+                  </p>
+                </div>
               </div>
             </div>
+
             <div className="cattery-details__contact">
               <h3 className="cattery-details__subtitle">Contact Information</h3>
-              <div className="cattery-details__content">
-                <p className="cattery-details__text">
-                  <span className="cattery-details__label"> Name: </span>{" "}
-                  {catteryDetails.name}
-                </p>
-                <p className="cattery-details__text">
-                  <span className="cattery-details__label"> Phone: </span>{" "}
-                  {catteryDetails.phone}
-                </p>
-                <p className="cattery-details__text">
-                  <span className="cattery-details__label"> Website:</span>{" "}
-                  {catteryDetails.website}
-                </p>
+
+              <div className="cattery-details__content-group">
+                <div className="cattery-details__content-label">
+                  <p className="cattery-details__label"> Name: </p>
+                  <p className="cattery-details__label"> Phone: </p>
+                  <p className="cattery-details__label"> Website: </p>
+                </div>
+
+                <div className="cattery-details__content">
+                  <p className="cattery-details__text">{catteryDetails.name}</p>
+                  <p className="cattery-details__text">
+                    {catteryDetails.phone}
+                  </p>
+                  <p className="cattery-details__text">
+                    {catteryDetails.website}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

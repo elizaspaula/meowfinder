@@ -10,6 +10,7 @@ License: none (public domain)
 
 body {
   color: #13182c;
+  overflow: scroll;
 }
 
 html,

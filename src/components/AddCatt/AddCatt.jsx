@@ -1,5 +1,5 @@
 import "./AddCatt.scss";
-import backArrow from "../../assets/icons/chevronleft.svg";
+import backArrow from "../../assets/icons/circle-chevron-left-solid.svg";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
