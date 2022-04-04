@@ -14,6 +14,9 @@ function EditCatt() {
   const [document, setDocument] = useState([]);
 
   useEffect(() => {
+    if (!authToken) {
+      return history.push("/login");
+    }
     axios
       .get(`${process.env.REACT_APP_API_URL}/catteries/${id}`)
       .then((results) => {
@@ -51,7 +54,7 @@ function EditCatt() {
         console.log(error);
       });
   };
-
+  console.log(picture);
   return (
     <div className="page-wrapper">
       <div className="header-wrapper">
@@ -266,7 +269,7 @@ function EditCatt() {
           <div className="details__container">
             <h3 className="upload-form__subheader">Upload Photos</h3>
             <div className="upload-form__photos">
-              {picture.map((photo) => (
+              {picture?.map((photo) => (
                 <img
                   className="upload-form__img"
                   src={`${process.env.REACT_APP_API_URL}/uploads/${photo}`}

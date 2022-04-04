@@ -2,6 +2,8 @@ import "./Dashboard.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import Footer from "../../components/Footer/Footer";
 
 function Dashboard() {
@@ -10,6 +12,9 @@ function Dashboard() {
   const history = useHistory();
 
   useEffect(() => {
+    if (!authToken) {
+      return history.push("/login");
+    }
     axios
       .get(`${process.env.REACT_APP_API_URL}/admin`, {
         headers: {
@@ -22,18 +27,31 @@ function Dashboard() {
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, {
-        headers: {
-          Authorization: `Bearer ${authToken}`,
+    confirmAlert({
+      title: "Confirm to submit",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () =>
+            axios
+              .delete(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, {
+                headers: {
+                  Authorization: `Bearer ${authToken}`,
+                },
+              })
+              .then((data) => {
+                history.go(0);
+              })
+              .catch((error) => {
+                console.log(error);
+              }),
         },
-      })
-      .then((data) => {
-        history.go(0);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        {
+          label: "No",
+        },
+      ],
+    });
   };
 
   const handleLogout = () => {

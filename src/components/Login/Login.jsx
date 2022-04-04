@@ -22,8 +22,8 @@ function Login() {
 
   const history = useHistory();
 
-  const submitForm = (data) => {
-    axios
+  const submitForm = async (data) => {
+    await axios
       .post(`${process.env.REACT_APP_API_URL}/login`, data)
       .then((response) => {
         if (response.data.token) {
@@ -32,10 +32,9 @@ function Login() {
         } else {
           console.log("error can't login");
         }
-      })
-      .then(() => {
-        history.push("/admin");
       });
+
+    history.push("/admin");
   };
 
   return (

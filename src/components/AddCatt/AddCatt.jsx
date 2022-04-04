@@ -3,11 +3,19 @@ import backArrow from "../../assets/icons/chevronleft.svg";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
 
 function AddCatt() {
   const authToken = sessionStorage.getItem("authToken");
   const { register, handleSubmit } = useForm();
   const history = useHistory();
+
+  useEffect(() => {
+    if (!authToken) {
+      return history.push("/login");
+    }
+  });
+
   const onSubmit = (data) => {
     const formData = new FormData();
 
