@@ -153,20 +153,6 @@ function AddCatt() {
                   <option value="gccf">GCCF</option>
                   <option value="acfa">ACFA</option>
                 </select>
-                <label
-                  htmlFor="description"
-                  className="details__label mobile label"
-                >
-                  Description
-                </label>
-                <textarea
-                  type="text"
-                  className="details__textarea mobile"
-                  placeholder="Please enter a description..."
-                  id="description"
-                  name="descriptionmobile"
-                  {...register("descriptionmobile")}
-                />
               </div>
             </div>
 
@@ -247,13 +233,13 @@ function AddCatt() {
               </div>
             </div>
           </div>
-          <div className="details__container tablet">
+          <div className="details__container ">
             <label htmlFor="description" className="details__label label">
               Description
             </label>
             <textarea
               type="text"
-              className="details__textarea__description tablet"
+              className="details__textarea__description "
               placeholder="Please enter a description..."
               id="description"
               name="description"

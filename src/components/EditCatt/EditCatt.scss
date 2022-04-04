@@ -1,25 +1,13 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/colors" as *;
 
-.mobile {
-  @include tablet {
-    display: none;
-  }
-}
-
-.tablet {
-  display: none;
-
-  @include tablet {
-    display: flex;
-    flex-direction: column;
-  }
+.details__container {
+  display: flex;
+  flex-direction: column;
 }
 
 .details__textarea__description {
-  @include tablet {
-    @include input-field-description;
-  }
+  @include input-field-description;
 }
 .upload-form {
   &__subheader {

@@ -28,7 +28,6 @@ function EditCatt() {
         setValue("breed", results.data.breed);
         setValue("registry", results.data.registry);
         setValue("description", results.data.description);
-        setValue("descriptionmobile", results.data.descriptionmobile);
         setValue("name", results.data.name);
         setValue("phone", results.data.phone);
         setValue("email", results.data.email);
@@ -41,8 +40,24 @@ function EditCatt() {
   }, []);
 
   const onSubmit = (data) => {
+    const formData = new FormData();
+
+    for (let [field, value] of Object.entries(data)) {
+      console.log(field, value);
+
+      if (field === "picture") {
+        value.forEach((element) => {
+          formData.append(field, element[0]);
+        });
+      } else if (field === "document") {
+        formData.append(field, value[0]);
+      } else {
+        formData.append(field, value);
+      }
+    }
+
     axios
-      .put(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, data, {
+      .put(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -53,6 +68,19 @@ function EditCatt() {
       .catch((error) => {
         console.log(error);
       });
+
+    // axios
+    //   .put(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, data, {
+    //     headers: {
+    //       Authorization: `Bearer ${authToken}`,
+    //     },
+    //   })
+    //   .then(() => {
+    //     history.push("/admin");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
   console.log(picture);
   return (
@@ -68,7 +96,11 @@ function EditCatt() {
           </Link>
           <h1 className="header-wrapper__text">Edit the Cattery</h1>
         </div>
-        <form className="cattery-form" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          enctype="multipart/form-data"
+          className="cattery-form"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="details__wrapper">
             <div className="details__container">
               <div className="details__form">
@@ -157,20 +189,6 @@ function EditCatt() {
                   <option value="gccf">GCCF</option>
                   <option value="acfa">ACFA</option>
                 </select>
-                <label
-                  htmlFor="description"
-                  className="details__label mobile label"
-                >
-                  Description
-                </label>
-                <textarea
-                  type="text"
-                  className="details__textarea mobile"
-                  placeholder="Please enter a description..."
-                  id="description"
-                  name="descriptionmobile"
-                  {...register("descriptionmobile")}
-                />
               </div>
             </div>
 
@@ -251,15 +269,13 @@ function EditCatt() {
               </div>
             </div>
           </div>
-          <div className="details__container tablet">
+          <div className="details__container ">
             <label htmlFor="description" className="details__label label">
               Description
             </label>
             <textarea
               type="text"
-              rows="30"
-              cols="40"
-              className="details__textarea__description tablet"
+              className="details__textarea__description "
               placeholder="Please enter a description..."
               id="description"
               name="description"
@@ -268,6 +284,24 @@ function EditCatt() {
           </div>
           <div className="details__container">
             <h3 className="upload-form__subheader">Upload Photos</h3>
+            <div className="file-upload">
+              <input
+                type="file"
+                className="file-upload__input"
+                {...register("picture[0]")}
+              />
+              <input
+                type="file"
+                className="file-upload__input"
+                {...register("picture[1]")}
+              />
+              <input
+                type="file"
+                className="file-upload__input"
+                {...register("picture[2]")}
+              />
+            </div>
+
             <div className="upload-form__photos">
               {picture?.map((photo) => (
                 <img
@@ -278,6 +312,14 @@ function EditCatt() {
               ))}
             </div>
             <h3 className="upload-form__subheader">Upload Documents</h3>
+            <div className="file-upload">
+              <input
+                type="file"
+                className="file-upload__input"
+                {...register("document")}
+              />
+            </div>
+
             <div className="upload-form__documents">
               <a
                 href={`${process.env.REACT_APP_API_URL}/uploads/${document}`}

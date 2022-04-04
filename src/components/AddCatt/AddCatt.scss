@@ -14,11 +14,6 @@
 
 .header-wrapper {
   background-color: background-color;
-  // background-image: radial-gradient(
-  //   #16419f 0.8500000000000001px,
-  //   #f8edeb 0.8500000000000001px
-  // );
-  // background-size: 17px 17px;
 
   &__subheader {
     display: flex;
@@ -67,16 +62,6 @@
     padding: 8px;
     height: 7.5rem;
     text-align: left;
-  }
-
-  .tablet {
-    display: none;
-  }
-
-  .mobile {
-    @include tablet {
-      display: none;
-    }
   }
 
   &__subheader {
