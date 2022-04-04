@@ -107,10 +107,17 @@ function AddCatt() {
                   {...register("province")}
                 >
                   <option value="Select">Please select the Province...</option>
-                  <option value="British Columbia">British Columbia</option>
                   <option value="Alberta">Alberta</option>
+                  <option value="British Columbia">British Columbia</option>
                   <option value="Manitoba">Manitoba</option>
+                  <option value="New Brunswick">New Brunswick</option>
+                  <option value="Newfoundland and Labrador">
+                    Newfoundland and Labrador
+                  </option>
+                  <option value="Nova Scotia">Newfoundland and Labrador</option>
+                  <option value="Nova Scotia">Nova Scotia</option>
                   <option value="Quebec">Quebec</option>
+                  <option value="Nova Scotia">Nova Scotia</option>
                 </select>
                 <label htmlFor="city" className="details__label label">
                   City
@@ -134,9 +141,10 @@ function AddCatt() {
                 >
                   <option value="Select">Please select the breed...</option>
                   <option value="Maine Coon">Maine Coon</option>
-                  <option value="Persa">Persa</option>
+                  <option value="Bengal">Bengal</option>
+                  <option value="Persian">Persian</option>
                   <option value="Ragdoll">Ragdoll</option>
-                  <option value="Brazilian Cat">Brazilian Cat</option>
+                  <option value="Savannah">Savannah</option>
                 </select>
                 <label htmlFor="registry" className="details__label label">
                   Registry
