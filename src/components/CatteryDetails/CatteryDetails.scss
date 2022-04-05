@@ -90,10 +90,7 @@
 
   &__content-group {
     display: flex;
-  }
-
-  &__text {
-    padding-bottom: 0.25rem;
+    align-items: center;
   }
 
   &__label {

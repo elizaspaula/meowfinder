@@ -44,6 +44,7 @@ function Home() {
             name="breed"
             id="breed"
             className="search__select"
+            required
           >
             <option value="Select">Select the breed...</option>
             <option value="Maine Coon">Maine Coon</option>
@@ -57,6 +58,7 @@ function Home() {
             id="province"
             className="search__select"
             value={province}
+            required
             onChange={(e) => setProvince(e.target.value)}
           >
             <option value="Select">Select the province...</option>

@@ -13,7 +13,6 @@ function CatteryDetails(props) {
     axios
       .get(`${process.env.REACT_APP_API_URL}/catteries/${currentID}`)
       .then((response) => {
-        console.log(response);
         setCatteryDetails(response.data);
       });
   }, [currentID]);
