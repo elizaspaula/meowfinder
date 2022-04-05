@@ -15,13 +15,6 @@ function HeaderHav() {
             </div>
             <div className="nav__right">
               <NavLink
-                to="/home"
-                className="nav__link links"
-                activeClassName="nav__link--highlight"
-              >
-                Home
-              </NavLink>
-              <NavLink
                 to="/catteries"
                 className="nav__link links"
                 activeClassName="nav__link--highlight"

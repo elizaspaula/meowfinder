@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Catteries from "./pages/Catteries/Catteries";
 import Home from "./pages/Home/Home";
 import CatteryDetails from "./components/CatteryDetails/CatteryDetails";
@@ -15,6 +15,7 @@ function App() {
       <main className="page">
         <div className="page-container">
           <Switch>
+            <Redirect path="/" to="/home" exact />
             <Route path="/home" exact component={Home} />
             <Route path="/catteries" exact component={Catteries} />
             <Route path="/catteries/:id" exact component={CatteryDetails} />
