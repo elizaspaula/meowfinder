@@ -27,7 +27,6 @@ function Login() {
       .post(`${process.env.REACT_APP_API_URL}/login`, data)
       .then((response) => {
         if (response.data.token) {
-          // save to sessionStorage our key
           sessionStorage.setItem("authToken", response.data.token);
         } else {
           console.log("error can't login");

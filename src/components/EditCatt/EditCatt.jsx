@@ -68,19 +68,6 @@ function EditCatt() {
       .catch((error) => {
         console.log(error);
       });
-
-    // axios
-    //   .put(`${process.env.REACT_APP_API_URL}/admin/cattery/${id}`, data, {
-    //     headers: {
-    //       Authorization: `Bearer ${authToken}`,
-    //     },
-    //   })
-    //   .then(() => {
-    //     history.push("/admin");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   };
   console.log(picture);
   return (
