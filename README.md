@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# About the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Home page
+<img width="1279" alt="image" src="https://user-images.githubusercontent.com/88399956/162105529-01eb8109-f4e7-41e2-aa7b-386b20c9aa7e.png">
 
-## Available Scripts
+A responsive website that allows cats lovers to search and interact with certificated breeders in Canada. The breeders' owners can post about the kittens available and other important information such as documentation, contact information, location. The users can search based on their location and interact with the breeders through email.
 
-In the project directory, you can run:
+MeowFinder API Repository: https://github.com/elizaspaula/meowfinder-api
 
-### `yarn start`
+MeowFinder Deployed: https://develop--singular-kashata-8ff3d7.netlify.app/home
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###Public page:
 
-### `yarn test`
+-	Home:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+ Search by breed and location
+ 
+ 
+  -Desktop
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="1037" alt="image" src="https://user-images.githubusercontent.com/88399956/162107270-6d996744-9463-4e60-9623-39c87151ce8f.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Mobile
+  
+  <img width="281" alt="image" src="https://user-images.githubusercontent.com/88399956/162110522-fc28709c-7307-4ba4-aa84-fd46350c77ef.png">
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-Listings:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+List of all catteries
 
-## Learn More
+  Desktop
+<img width="1029" alt="image" src="https://user-images.githubusercontent.com/88399956/162107378-af4d8faa-c80d-48d9-bcfc-afb2f29f5b32.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+  Mobile
+  
+  
+  <img width="283" alt="image" src="https://user-images.githubusercontent.com/88399956/162110679-ae1f2d86-eb53-4b08-891d-5179b582d58c.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+List Single:
+ 
+ 
+  Desktop
+  
+  
+  <img width="1036" alt="image" src="https://user-images.githubusercontent.com/88399956/162107451-d56bc64c-328b-4053-a683-08e888112330.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    
+   Mobile
+   
+   
+   <img width="384" alt="image" src="https://user-images.githubusercontent.com/88399956/162110838-94dd0d9b-b5b6-42bc-a7bd-81d183a70e31.png">
 
-### Making a Progressive Web App
+    
+-Login / Logout and Sign Up page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Email
+Password
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img width="561" alt="image" src="https://user-images.githubusercontent.com/88399956/162109177-5c291152-d6e5-478d-a142-1e2466a249c4.png">
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Admin page:
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Admin Dashboard: show cattery information, edit and delete
+
+<img width="1035" alt="image" src="https://user-images.githubusercontent.com/88399956/162109294-4f299d12-8a51-4954-9df5-5191806c9e66.png">
+
+
+-Form creates new/edit cattery
+
+
+<img width="1450" alt="image" src="https://user-images.githubusercontent.com/88399956/162109489-ef90de46-838a-4a1a-b048-c42ca43c1ab1.png">
+
+
+
+## Build With
+
+  - React.js
+  - HTML5
+  - SaaS
+
+## Getting Started:
+  To get a local copy up and running follow these simple example steps.
+  
+  Clone the project
+  
+  
+    git clone https://github.com/elizaspaula/meowfinder-api.git
+    
+    
+ Go to the project directory
+ 
+    cd meowfinder
+  
+  
+  Install dependencies
+    
+    
+    npm install
+    
+    
+  Start the server
+  
+  
+    npm run start
+
+
+
+
+  
