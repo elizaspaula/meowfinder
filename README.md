@@ -1,7 +1,5 @@
 # About the Project
 
-- Home page
-<img width="1279" alt="image" src="https://user-images.githubusercontent.com/88399956/162105529-01eb8109-f4e7-41e2-aa7b-386b20c9aa7e.png">
 
 A responsive website that allows cats lovers to search and interact with certificated breeders in Canada. The breeders' owners can post about the kittens available and other important information such as documentation, contact information, location. The users can search based on their location and interact with the breeders through email.
 
