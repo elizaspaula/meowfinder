@@ -95,7 +95,7 @@ Admin page:
   Clone the project
   
   
-    git clone https://github.com/elizaspaula/meowfinder-api.git
+    git clone https://github.com/elizaspaula/meowfinder.git
     
     
  Go to the project directory
